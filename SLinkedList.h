@@ -27,6 +27,7 @@ class SLinkedList {
 		int size() const;				// list size
 		SNode<E> *head;					// head of list
 		int n;							// number of elements
+		E recursiveSum(SNode<E>);
 };
 
 // constructor
@@ -79,4 +80,11 @@ void SLinkedList<E>::removeFront() {
 template <typename E>
 int SLinkedList<E>::size() const {
 	return n;
+}
+
+//  Recursive Sum
+template <typename E>
+E recursiveSum(SNode<E> *head) {
+  if (head == nullptr) return 0;
+  return head->elem + recursiveSum(head->next);
 }
