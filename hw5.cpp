@@ -15,15 +15,9 @@ public:
   int getCapacity();
 };
 
-// reserve a new larger capacity (if it's actually larger)
-// copy the previous values over to the new array
-// delete the old array
-// make sure that DynamicVector uses the new array
 void DynamicVector::reserve(int newCapacity) {
   if (size == newCapacity / 2) {
     capacity = newCapacity;
-    //    char* tmp[capacity];  //  assigning to 'char*' from incompatible type 'char'
-    //    tmp = new char[capacity];  //  undeclared type 'tmp'
     char* tmp = new char[capacity];     // segmentation fault
     for (int i = 0; i < capacity / 2; i++) {  
       tmp[i] = array[i];
@@ -39,7 +33,7 @@ void DynamicVector::reserve(int newCapacity) {
 DynamicVector::DynamicVector () {
   size = 0;                          // add size = 0;
   capacity = 1;
-  char* array[capacity];
+  array = new char[capacity];
 }
 
 int DynamicVector::getSize() {
@@ -68,5 +62,12 @@ int main() {
   myArray.push_back('B');
   myArray.push_back('C');
   myArray.push_back('B');
-  return 0;
+  myArray.push_back('d');
+    myArray.push_back('c');
+myArray.push_back('c');
+ myArray.push_back('c');
+ myArray.push_back('c');
+ myArray.push_back('c');
+ myArray.push_back('c');
+    return 0;
 }
