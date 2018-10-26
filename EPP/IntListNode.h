@@ -6,7 +6,8 @@ public:
 		elem(e), next(nextptr) { }
 	int &getElement() {return elem;}
 	IntListNode *getNext() {return next;}
-private:
+	IntListNode *next;				// next item in the list ///// From private: to public:, said YONG.
+ private:
 	int elem;					// linked list element value
-	IntListNode *next;				// next item in the list
+
 };

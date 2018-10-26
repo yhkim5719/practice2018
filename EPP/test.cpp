@@ -14,8 +14,6 @@ int main() {
 	mylist.print();
 	mylist.addFront(11);
        	mylist.addAtPos(12, 0);
-	//	mylist.addAtPos(10, 13);
 	mylist.addAtPos(13, 4);
-
 	mylist.print();
 }

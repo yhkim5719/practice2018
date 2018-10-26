@@ -40,7 +40,7 @@ void IntegerList::print() {		// print all elements
 int IntegerList::size() const {				// list size
 	return n;
 }
-
+  
 void IntegerList::addAtPos(int e, int pos) {
   if (pos < 0 || pos > n) throw length_error("wrong position");
   if (pos == 0) {
@@ -55,14 +55,10 @@ void IntegerList::addAtPos(int e, int pos) {
   cout << "After for-loop, ptr is on " << ptr->getElement() << endl;
   IntListNode* newNode = new IntListNode(e, ptr->getNext());
   cout << "newNode is pointing " << (newNode->getNext())->getElement() << endl;
-  IntListNode* tmp = new IntListNode(ptr->getElement(), newNode);
-  ptr = tmp;
-  //  delete tmp;
+  ptr->next = newNode;
+  //  delete ptr;
   cout << "ptr is " << ptr->getElement() << endl;
   cout << "ptr is pointing " << (ptr->getNext())->getElement() << endl;
-  cout << "tmp is " << tmp->getElement() << endl;
-  cout << "tmp is pointing " << (tmp->getNext())->getElement() << endl;
-  cout << "newNode is " << newNode->getElement() << endl;
-  n++;
   }
+  n++;
 }

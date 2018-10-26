@@ -14,7 +14,7 @@ public:
 	void removeFront();			// remove front item list
 	void print();
 	int size() const;					// list size
-	
+
 	void addAtPos(int e, int pos);                  // add THE FUNCTION!!!
 
  private:
