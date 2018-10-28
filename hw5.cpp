@@ -16,17 +16,17 @@ public:
 };
 
 void DynamicVector::reserve(int newCapacity) {
-  if (size == newCapacity / 2) {
+  if (size < newCapacity ) {
     capacity = newCapacity;
     char* tmp = new char[capacity];     // segmentation fault
-    for (int i = 0; i < capacity / 2; i++) {  
+    for (int i = 0; i < capacity; i++) {  
       tmp[i] = array[i];
     }
     delete[] array;
     array = tmp;
     std::cout << "cap = " << capacity << std::endl;
   } else {
-    std::cout << "enough capacity" << std::endl;
+    return;
   }
 }
 
@@ -45,7 +45,7 @@ int DynamicVector::getCapacity() {
 }
 
 void DynamicVector::push_back (char val) {
-  reserve(capacity * 2);                               //  add reserve(capacity * 2) 
+  reserve(5);                               //  add reserve(capacity * 2) 
   array[size] = val;
   size++;
   std::cout << "size of array = " << getSize() << std::endl;

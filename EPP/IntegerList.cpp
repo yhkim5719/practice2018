@@ -55,7 +55,7 @@ void IntegerList::addAtPos(int e, int pos) {
   cout << "After for-loop, ptr is on " << ptr->getElement() << endl;
   IntListNode* newNode = new IntListNode(e, ptr->getNext());
   cout << "newNode is pointing " << (newNode->getNext())->getElement() << endl;
-  ptr->next = newNode;
+  setNext(ptr, newNode);
   //  delete ptr;
   cout << "ptr is " << ptr->getElement() << endl;
   cout << "ptr is pointing " << (ptr->getNext())->getElement() << endl;
